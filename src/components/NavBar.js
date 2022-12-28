@@ -35,22 +35,22 @@ function NavBar() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="#home" className={ActiveLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => setActiveLink('home')}>Home</Nav.Link>
-            <Nav.Link href="#Skills" className={ActiveLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => setActiveLink('skills')}>Skills</Nav.Link>
-            <Nav.Link href="#Projects" className={ActiveLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => setActiveLink('projects')}>Projects</Nav.Link>
+            <Nav.Link href="#skills" className={ActiveLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => setActiveLink('skills')}>Skills</Nav.Link>
+            <Nav.Link href="#projects" className={ActiveLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => setActiveLink('projects')}>Projects</Nav.Link>
           </Nav>
           <span className='navbar-text'>
             <div className='social-icon'>
-                <a href="#">
+                <a href="https://www.linkedin.com/in/nipun-upekshana/" target="_blank" rel="noreferrer">
                     <img src={navIcon1} alt='navIcon1'/>
                 </a>
-                <a href="#">
+                <a href="https://github.com/nipunupekshana" target="_blank" rel="noreferrer">
                     <img src={navIcon2} alt='navIcon2'/>
                 </a>
-                <a href="#">
+                <a href="skype:nipunupekshana12?chat" target="_blank" rel="noreferrer">
                     <img src={navIcon3} alt='navIcon3'/>
                 </a>
             </div>
-                <button className='btn'>Let's Connect</button>
+                <button className='btn' onClick={()=> window.open('mailto:nipunupekshana1@gmail.com?subject=Mail from Portfolio',"_blank")}>Let's Connect</button>
             </span>
         </Navbar.Collapse>
       </Container>

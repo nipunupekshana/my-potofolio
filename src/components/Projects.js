@@ -42,7 +42,7 @@ export const Projects = () => {
   ];
 
   return (
-    <section className="project" id="project">
+    <section className="project" id="projects">
       <Container>
         <Row>
           <Col>
@@ -73,15 +73,15 @@ export const Projects = () => {
                 className="nav-pills mb-5 justify-content-center align-items-center"
                 id="pills-tab"
               >
-                <Nav.Item>
+                {/* <Nav.Item>
                   <Nav.Link eventKey="first">Tab 1</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
+                </Nav.Item> */}
+                {/* <Nav.Item>
                   <Nav.Link eventKey="second">Tab 2</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link eventKey="third">Tab 3</Nav.Link>
-                </Nav.Item>
+                </Nav.Item> */}
                 <Tab.Content>
                   <Tab.Pane eventKey="first">
                     <Row>
@@ -90,8 +90,8 @@ export const Projects = () => {
                       })}
                     </Row>
                   </Tab.Pane>
-                  <Tab.Pane eventKey="second">Loren Ipsum</Tab.Pane>
-                  <Tab.Pane eventKey="third">Loren Ipsum</Tab.Pane>
+                  {/* <Tab.Pane eventKey="second">Loren Ipsum</Tab.Pane>
+                  <Tab.Pane eventKey="third">Loren Ipsum</Tab.Pane> */}
                 </Tab.Content>
               </Nav>
             </Tab.Container>

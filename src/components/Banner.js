@@ -1,45 +1,11 @@
-import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import headerImg from "../assets/img/header-img.svg";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
+import ReactTyped from "react-typed";
 
 export const Banner = () => {
-  const [LoopNum, setLoopNum] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const toRotate = ["web developer", "web designer", "freelancer"];
-  const [Text, setText] = useState("");
-  const [delta, setDelta] = useState(300 - Math.random() * 100);
-  const period = 2000;
-
-  useEffect(() => {
-    let ticker = setInterval(() => tick(), delta);
-    return () => clearInterval(ticker);
-  }, [Text, isDeleting, LoopNum, delta, period]);
-
-  const tick = () => {
-    const i = LoopNum % toRotate.length;
-    const fullTxt = toRotate[i];
-
-    if (isDeleting) {
-      setText(fullTxt.substring(0, Text.length - 1));
-    } else {
-      setText(fullTxt.substring(0, Text.length + 1));
-    }
-
-    setDelta(300 - Math.random() * 100);
-
-    if (!isDeleting && Text === fullTxt) {
-      setDelta(period);
-      setIsDeleting(true);
-    } else if (isDeleting && Text === "") {
-      setIsDeleting(false);
-      setLoopNum(LoopNum + 1);
-      setDelta(500);
-    }
-  };
-
   return (
     <section className="banner" id="home">
       <Container>
@@ -48,24 +14,45 @@ export const Banner = () => {
             <TrackVisibility once>
               {({ isVisible }) => (
                 <div
-                  className={isVisible ? "animate__animated animate__fadeIn" : ""}
+                  className={
+                    isVisible ? "animate__animated animate__fadeIn" : ""
+                  }
                 >
                   <span className="tagline">Welcome to my Portfolio</span>
+                  <h2>
+                    {`Hi I'm Nipun Upekshana`}
+                  </h2>
                   <h1>
-                    {`Hi I'm Nipun`} <span className="wrap">{Text}</span>
+                  <ReactTyped
+                        strings={[
+                          "Full Stack Developer",
+                          "JavaScript lover",
+                          "Photographer",
+                        ]}
+                        typeSpeed={150}
+                        backSpeed={100}
+                        loop
+                      />
                   </h1>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum
+                    Software engineer based in Sri Lanka with years of
+                    experience in ERP systems & mortgage broker platforms. My
+                    goal is to always build products that provide pixel-perfect,
+                    performant experiences.
+                    <b>
+                      Open To Remote/Onsite opportunities from anywhere in the
+                      world.
+                    </b>
                   </p>
-                  <button onClick={() => console.log("connect")}>
-                    Let's connect <ArrowRightCircle size={25} />{" "}
+                  <button
+                    onClick={() =>
+                      window.open(
+                        "mailto:nipunupekshana1@gmail.com?subject=Mail from Portfolio",
+                        "_blank"
+                      )
+                    }
+                  >
+                    Let's connect <ArrowRightCircle size={25} />
                   </button>
                 </div>
               )}
